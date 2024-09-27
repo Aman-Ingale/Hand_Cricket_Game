@@ -4,7 +4,6 @@ public class Match {
     Scanner sc = new Scanner(System.in);
     Random rnd = new Random();
     Utilities u = new Utilities();
-
     int user=0;
     int comp=0;
     int wickets=0;
