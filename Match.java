@@ -325,7 +325,6 @@ public class Match {
                         if(wickets<10){
                             Player2=team2[u.checkBigger(Player1, Player2,team2)+1];
                             nonStriker=0;
-
                         }
                     }
                 }
