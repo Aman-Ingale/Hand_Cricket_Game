@@ -328,7 +328,6 @@ public class Match {
 
                         }
                     }
-                    
                 }
                 else if(user>6){
                     //throw new Exception();
