@@ -12,6 +12,8 @@ public class Match {
     int Striker=0;
     int indexUser=0;
     int indexComp=0;
+    char strike1='*';
+    char strike2=' ';
 
     StringBuffer team1[] = new StringBuffer[11];
     StringBuffer team2[] = new StringBuffer[11];
@@ -201,7 +203,10 @@ public class Match {
         balls=0;
         comp=0;
         user=0;
-        System.out.println("comp : "+comp+"\t | \tuser : "+user+"\n"+teams[indexUser]+" | Score : "+runs+"/"+wickets+"\n"+Player1+" : "+Striker+"\n"+Player2+" : "+nonStriker);
+        strike1='*';
+        strike2=' ';
+        ptr=0;
+        System.out.println("comp : "+comp+"\t | \tuser : "+user+"\n"+teams[indexUser]+" | Score : "+runs+"/"+wickets+"\n"+Player1+strike1+" : "+Striker+"\n"+Player2+strike2+" : "+nonStriker);
         while(true){
             balls++;
             System.out.println();
@@ -260,7 +265,7 @@ public class Match {
                     }
                     runs=runs+user;
                 }
-                System.out.println("comp : "+comp+"\t | \tuser : "+user+"\n"+teams[indexUser]+" | Score : "+runs+"/"+wickets+"\n"+Player1+" : "+Striker+"\n"+Player2+" : "+nonStriker);
+                System.out.println("comp : "+comp+"\t | \tuser : "+user+"\n"+teams[indexUser]+" | Score : "+runs+"/"+wickets+"\n"+Player1+strike1+" : "+Striker+"\n"+Player2+strike2+" : "+nonStriker);
             } catch (Exception e) {
                 System.out.println("Enter valid choice");
                 toss();
@@ -279,7 +284,7 @@ public class Match {
                     System.out.println(team1[i].toString()+": "+team1score[i]);
                 }
                 int target = runs+1;
-                System.out.println("You need to defend "+target+" runs");
+                System.out.println("You need to defend "+target+" runs\n");
                 Bowling(target);
                 return;
             }
@@ -298,7 +303,10 @@ public class Match {
         Striker=0;
         Player2=team2[1];
         nonStriker=0;
-        System.out.println("comp : "+comp+"\t | \tuser : "+user+teams[indexComp]+"\n | Score : "+runs+"/"+wickets+"\n"+Player1+" : "+Striker+"\n"+Player2+" : "+nonStriker+"\nTarget : "+target+"\n"+(target-runs)+"to win, "+(10-wickets)+"wickets left.");
+        ptr=0;
+        strike1='*';
+        strike2=' ';
+        System.out.println("comp : "+comp+"\t | \tuser : "+user+"\n"+teams[indexComp]+"\n | Score : "+runs+"/"+wickets+"\n"+Player1+strike1+" : "+Striker+"\n"+Player2+strike2+" : "+nonStriker+"\nTarget : "+target+"\n"+(target-runs)+"to win, "+(10-wickets)+"wickets left.");
         while(true){
             System.out.println();
             comp = rnd.nextInt(7);
@@ -346,7 +354,7 @@ public class Match {
                     }
                     runs=runs+comp;
                 }
-                System.out.println("comp : "+comp+"\t | \tuser : "+user+teams[indexComp]+"\n | Score : "+runs+"/"+wickets+"\n"+Player1+" : "+Striker+"\n"+Player2+" : "+nonStriker+"\nTarget : "+target+"\n"+(target-runs)+"to win, "+(10-wickets)+"wickets left.");
+                System.out.println("comp : "+comp+"\t | \tuser : "+user+"\n"+teams[indexComp]+"\n | Score : "+runs+"/"+wickets+"\n"+Player1+strike1+" : "+Striker+"\n"+Player2+strike2+" : "+nonStriker+"\nTarget : "+target+"\n"+(target-runs)+"to win, "+(10-wickets)+"wickets left.");
             } catch (Exception e) {
                 System.out.println("Enter a valid choice"+e);
                 toss();
@@ -406,7 +414,10 @@ public class Match {
         balls=0;
         user=0;
         comp=0;
-        System.out.println("comp : "+comp+"\t | \tuser : "+user+"\n"+teams[indexComp]+" | Score : "+runs+"/"+wickets+"\n"+Player1+" : "+Striker+"\n"+Player2+" : "+nonStriker);
+        strike1='*';
+        strike2=' ';
+        ptr=0;
+        System.out.println("comp : "+comp+"\t | \tuser : "+user+"\n"+teams[indexComp]+" | Score : "+runs+"/"+wickets+"\n"+Player1+strike1+" : "+Striker+"\n"+Player2+strike2+" : "+nonStriker);
         while(true){
             try {
 
@@ -459,7 +470,7 @@ public class Match {
                     }
                     runs=runs+comp;
                 }
-                System.out.println("comp : "+comp+"\t | \tuser : "+user+"\n"+teams[indexComp]+" | Score : "+runs+"/"+wickets+"\n"+Player1+" : "+Striker+"\n"+Player2+" : "+nonStriker);
+                System.out.println("comp : "+comp+"\t | \tuser : "+user+"\n"+teams[indexComp]+" | Score : "+runs+"/"+wickets+"\n"+Player1+strike1+" : "+Striker+"\n"+Player2+strike2+" : "+nonStriker);
             } catch (Exception e) {
                 System.out.println("Enter a valid choice"+e);
                 toss();
@@ -479,7 +490,7 @@ public class Match {
                     System.out.println(team2[i].toString()+": "+team2score[i]);
                 }
                 int target = runs+1;
-                System.out.println("You need to chase "+target+" runs");
+                System.out.println("You need to chase "+target+" runs\n");
                 Batting(target);
                 return;
             }
@@ -496,7 +507,10 @@ public class Match {
         nonStriker=0;
         user=0;
         comp=0;
-        System.out.println("comp : "+comp+"\t | \tuser : "+user+"\n"+teams[indexUser]+" | Score : "+runs+"/"+wickets+"\n"+Player1+" : "+Striker+"\n"+Player2+" : "+nonStriker+"\nTarget : "+target+"\n"+(target-runs)+"runs to win, "+(10-wickets)+" wickets left.");
+        ptr=0;
+        strike1='*';
+        strike2=' ';
+        System.out.println("comp : "+comp+"\t | \tuser : "+user+"\n"+teams[indexUser]+" | Score : "+runs+"/"+wickets+"\n"+Player1+strike1+" : "+Striker+"\n"+Player2+strike2+" : "+nonStriker+"\nTarget : "+target+"\n"+(target-runs)+"runs to win, "+(10-wickets)+" wickets left.");
         while(true){
             System.out.println();
             comp = rnd.nextInt(7);
@@ -546,7 +560,7 @@ public class Match {
                     }
                     runs=runs+user;
                 }
-                System.out.println("comp : "+comp+"\t | \tuser : "+user+"\n"+teams[indexUser]+" | Score : "+runs+"/"+wickets+"\n"+Player1+" : "+Striker+"\n"+Player2+" : "+nonStriker+"\nTarget : "+target+"\n"+(target-runs)+"runs to win, "+(10-wickets)+" wickets left.");
+                System.out.println("comp : "+comp+"\t | \tuser : "+user+"\n"+teams[indexUser]+" | Score : "+runs+"/"+wickets+"\n"+Player1+strike1+" : "+Striker+"\n"+Player2+strike2+" : "+nonStriker+"\nTarget : "+target+"\n"+(target-runs)+"runs to win, "+(10-wickets)+" wickets left.");
             } catch (Exception e) {
                 System.out.println("Enter a valid choice");
                 toss();
@@ -602,20 +616,19 @@ public class Match {
     void changeptr(){
         if(ptr==1){
             ptr=0;
-
-            if((Player1.charAt(Player1.length()-1)!='*')){
-                Player1.append("*");
-                if(Player2.charAt(Player2.length()-1)=='*'){
-                    Player2.deleteCharAt(Player2.length()-1);
+            if(strike1==' '){
+                strike1='*';
+                if(strike2=='*'){
+                    strike2=' ';
                 }
             }
         }
         else if(ptr==0){
             ptr=1;
-            if((Player2.charAt(Player2.length()-1)!='*')){
-                Player2.append("*");
-                if(Player1.charAt(Player1.length()-1)=='*'){
-                    Player1.deleteCharAt(Player1.length()-1);
+            if(strike2==' '){
+                strike2='*';
+                if(strike1=='*'){
+                    strike1=' ';
                 }
             }
         }
